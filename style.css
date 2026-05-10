@@ -1,0 +1,123 @@
+/* Paleta de Cores e Variáveis */
+:root {
+    --laranja-bolo: #E07A5F;
+    --marrom-chocolate: #3D2C23;
+    --fundo-neutro: #FDFBF7;
+    --texto-cor: #333333;
+    --branco: #FFFFFF;
+}
+
+/* Reset básico e tipografia de corpo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fundo-neutro);
+    font-family: 'Open Sans', sans-serif;
+    color: var(--texto-cor);
+    line-height: 1.6;
+}
+
+/* Tipografia de Títulos */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Header */
+header {
+    background-color: var(--laranja-bolo);
+    color: var(--branco);
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+/* Estrutura principal com responsividade nativa */
+main {
+    max-width: 800px; /* Não fica fixo em px, apenas limita o máximo */
+    width: 90%;       /* Ocupa 90% da tela em celulares */
+    margin: 0 auto;   /* Centraliza o box */
+    background-color: var(--branco);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Imagem Responsiva */
+img {
+    width: 100%;
+    height: auto; /* Mantém a proporção */
+    display: block;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Espaçamento interno das seções (Box Model) */
+section {
+    padding: 30px;
+}
+
+h2 {
+    color: var(--laranja-bolo);
+    border-bottom: 2px solid var(--laranja-bolo);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+h3 {
+    color: var(--marrom-chocolate);
+    margin: 15px 0 10px 0;
+    font-size: 1.2rem;
+}
+
+/* Listas (ul para ingredientes, ol para preparo) */
+ul, ol {
+    margin-left: 20px; /* Margem para indentar marcadores */
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px; /* Espaçamento confortável entre os itens */
+}
+
+/* Estilização do Botão (JS) */
+.botao-container {
+    text-align: center;
+    padding: 0 30px 40px 30px;
+}
+
+button {
+    background-color: var(--marrom-chocolate);
+    color: var(--branco);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #2b1f18;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: var(--marrom-chocolate);
+    color: var(--branco);
+    padding: 20px;
+    margin-top: 40px;
+}
