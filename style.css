@@ -1,123 +1,169 @@
-/* Paleta de Cores e Variáveis */
+/* Paleta de Cores Premium */
 :root {
-    --laranja-bolo: #E07A5F;
-    --marrom-chocolate: #3D2C23;
-    --fundo-neutro: #FDFBF7;
-    --texto-cor: #333333;
-    --branco: #FFFFFF;
+    --cor-fundo-site: #FDFBF8;   /* Creme muito suave */
+    --cor-fundo-card: #FFFFFF;   /* Branco puro para os cards */
+    --cor-texto-principal: #3E2723; /* Marrom escuro café */
+    --cor-texto-suave: #6D4C41;     /* Marrom médio */
+    --cor-destaque-laranja: #BF360C; /* Laranja queimado sofisticado */
+    --cor-destaque-chocolate: #4E342E; /* Marrom chocolate rico */
+    --sombra-suave: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* Reset básico e tipografia de corpo */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Reset Profissional */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--fundo-neutro);
-    font-family: 'Open Sans', sans-serif;
-    color: var(--texto-cor);
-    line-height: 1.6;
+    background-color: var(--cor-fundo-site);
+    color: var(--cor-texto-principal);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Tipografia de Títulos */
+/* Tipografia de Alta Qualidade */
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
 }
 
-/* Header */
+/* Header Elegante */
 header {
-    background-color: var(--laranja-bolo);
-    color: var(--branco);
+    background-color: var(--cor-destaque-chocolate);
+    color: #FFF;
+    padding: 80px 20px;
     text-align: center;
-    padding: 30px 20px;
-    margin-bottom: 30px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Corte diagonal moderno */
 }
 
-header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
+.header-container { max-width: 800px; margin: 0 auto; }
+
+header h1 { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 10px; }
+.subtitulo { font-size: 1.2rem; font-weight: 400; opacity: 0.9; }
+
+/* Container Principal */
+.container-principal {
+    max-width: 1000px;
+    margin: -60px auto 60px; /* Sobrepõe levemente o header */
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
 }
 
-/* Estrutura principal com responsividade nativa */
-main {
-    max-width: 800px; /* Não fica fixo em px, apenas limita o máximo */
-    width: 90%;       /* Ocupa 90% da tela em celulares */
-    margin: 0 auto;   /* Centraliza o box */
-    background-color: var(--branco);
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* Imagem Destaque Profissional */
+.moldura-imagem {
+    border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    margin-bottom: 50px;
+    border: 10px solid #FFF; /* Borda branca estilo foto */
 }
 
-/* Imagem Responsiva */
-img {
+.imagem-destaque {
     width: 100%;
-    height: auto; /* Mantém a proporção */
-    display: block;
-    max-height: 400px;
+    height: 500px;
     object-fit: cover;
+    display: block;
 }
 
-/* Espaçamento interno das seções (Box Model) */
-section {
-    padding: 30px;
+/* Layout de Cards */
+.conteudo-receita {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas em desktop */
+    gap: 30px;
+    margin-bottom: 50px;
 }
 
-h2 {
-    color: var(--laranja-bolo);
-    border-bottom: 2px solid var(--laranja-bolo);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
+.card {
+    background: var(--cor-fundo-card);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--sombra-suave);
 }
 
-h3 {
-    color: var(--marrom-chocolate);
-    margin: 15px 0 10px 0;
-    font-size: 1.2rem;
+.header-secao {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #F0F0F0;
+    padding-bottom: 15px;
 }
 
-/* Listas (ul para ingredientes, ol para preparo) */
-ul, ol {
-    margin-left: 20px; /* Margem para indentar marcadores */
-    margin-bottom: 20px;
+.header-secao .icone { font-size: 2rem; margin-right: 15px; }
+.header-secao h2 { font-size: 2.2rem; color: var(--cor-destaque-laranja); }
+
+/* Estilo de Ingredientes */
+.lista-ingredientes .grupo-ingredientes { margin-bottom: 25px; }
+.lista-ingredientes h3 { color: var(--cor-destaque-chocolate); font-size: 1.4rem; margin-bottom: 15px; }
+
+.lista-ingredientes ul { list-style: none; }
+.lista-ingredientes li {
+    padding: 10px 0;
+    border-bottom: 1px solid #F5F5F5;
+    color: var(--cor-texto-suave);
 }
 
-li {
-    margin-bottom: 10px; /* Espaçamento confortável entre os itens */
+/* Estilo do Modo de Preparo (Linha do Tempo) */
+.linha-tempo { list-style: none; counter-reset: passo; }
+.linha-tempo li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
 }
 
-/* Estilização do Botão (JS) */
-.botao-container {
-    text-align: center;
-    padding: 0 30px 40px 30px;
-}
-
-button {
-    background-color: var(--marrom-chocolate);
-    color: var(--branco);
-    font-family: 'Montserrat', sans-serif;
+.linha-tempo li .passo {
+    background: var(--cor-destaque-laranja);
+    color: #FFF;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.linha-tempo p { color: var(--cor-texto-suave); }
+
+/* Botão de Ação Premium */
+.acao-final { text-align: center; }
+#btn-alerta {
+    background-color: var(--cor-destaque-laranja);
+    color: #FFF;
     border: none;
-    border-radius: 8px;
-    padding: 15px 30px;
+    padding: 20px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 10px 20px rgba(191, 54, 12, 0.3);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
 }
 
-button:hover {
-    background-color: #2b1f18;
-    transform: scale(1.05);
+#btn-alerta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(191, 54, 12, 0.4);
+    background-color: #A32D0A;
 }
 
-/* Footer */
+/* Rodapé Refinado */
 footer {
+    background-color: #211512;
+    color: rgba(255,255,255,0.7);
+    padding: 50px 20px;
     text-align: center;
-    background-color: var(--marrom-chocolate);
-    color: var(--branco);
-    padding: 20px;
-    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+.footer-container p { margin-bottom: 5px; }
+.footer-container .nota { font-size: 0.8rem; font-style: italic; opacity: 0.5; }
+
+/* Responsividade Avançada */
+@media (max-width: 900px) {
+    header h1 { font-size: 2.5rem; }
+    .imagem-destaque { height: 350px; }
+    .conteudo-receita { grid-template-columns: 1fr; } /* Uma coluna em tablets/celulares */
 }
